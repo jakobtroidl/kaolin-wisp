@@ -35,7 +35,7 @@ class NeuralSDF(BaseNeuralField):
                  num_layers: int = 1
                  ):
         """
-        Creates a new neural field of an implicit furface, which maps 3D input coordinates to SDF values.
+        Creates a new neural field of an implicit surface, which maps 3D input coordinates to SDF values.
 
         This neural field consists of:
          * A feature grid (backed by an acceleration structure to boost raymarching speed)

@@ -350,7 +350,7 @@ def load_neural_field(args) -> BaseNeuralField:
 
 
 def load_neural_pipeline(args, device) -> Pipeline:
-    """ In Wisp, a Pipeline comprises of a neural field + a tracer (the latter is optional in some cases).
+    """ In Wisp, a Pipeline compromises of a neural field + a tracer (the latter is optional in some cases).
     Together, they form the complete pipeline required to render a neural primitive from input rays / coordinates.
     """
     nef = load_neural_field(args=args)

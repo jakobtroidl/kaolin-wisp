@@ -279,9 +279,9 @@ class RendererCore:
         """Renders a RenderBuffer using a FramePayload which contains metadata.
 
         Args:
-            payload (wisp.renderer.core.api.FramePayload): Metadata for the frame to be renderered.
+            payload (wisp.renderer.core.api.FramePayload): Metadata for the frame to be rendered.
             force_render (bool): If True, will always output a fresh new RenderBuffer. 
-                                 Otherwise the RenderBuffer can be a stale copy of the the previous frame
+                                 Otherwise, the RenderBuffer can be a stale copy of the previous frame
                                  if no updates are detected.
         
         Returns:
