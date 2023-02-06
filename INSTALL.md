@@ -4,30 +4,14 @@ NVIDIA Kaolin Wisp can be installed either manually or using Docker.
 
 ## Manual Installation
 
-### Prerequisite
-
-Install OpenEXR on Ubuntu:
-
-```
-sudo apt-get update
-sudo apt-get install libopenexr-dev 
-```
-
-Install OpenEXR on Windows:
-
-```
-pip install pipwin
-pipwin install openexr
-```
-
 ### Quick Start
-Full installation with interactive visualizer, for torch 1.12.1, cuda 11.3 and kaolin 0.12.0:
+Full installation with interactive visualizer, for torch 1.12.1, cuda 11.3 and kaolin 0.13.0:
 ```
 conda create -n wisp python=3.9
 git clone git@github.com:NVIDIAGameWorks/kaolin-wisp.git
 cd kaolin-wisp
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
-pip install kaolin==0.12.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-1.12.1_cu113.html
+pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-1.12.1_cu113.html
 pip install -r requirements.txt
 pip install -r requirements_app.txt
 python setup.py develop
@@ -48,27 +32,48 @@ conda activate wisp
 pip install --upgrade pip
 ```
 
-#### 2. Install PyTorch
+#### 2. (Optional) Install OpenEXR
+
+Some features of our library, like support for the [RTMV dataset](http://www.cs.umd.edu/~mmeshry/projects/rtmv/) 
+and logging of multi-layer EXR files (which you can visualize with
+awesome tools like [tev](https://github.com/Tom94/tev)) will only work if you install OpenEXR.
+These steps are optional, and these features will only be enabled if you follow these steps.
+
+Install OpenEXR on Ubuntu:
+
+```
+sudo apt-get update
+sudo apt-get install libopenexr-dev 
+```
+
+Install OpenEXR on Windows:
+
+```
+pip install pipwin
+pipwin install openexr
+```
+
+#### 3. Install PyTorch
 
 You should first install PyTorch by following the [official instructions](https://pytorch.org/). The code has been tested with `1.9.1` to `1.12.0` on Ubuntu 20.04. 
 
-#### 3. Install Kaolin
+#### 4. Install Kaolin
 
 kaolin can be installed with pip (use the correct torch + cuda version):
 ```
-pip install kaolin==0.12.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-${TORCH_VER}_cu${CUDA_VER}.html
+pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-${TORCH_VER}_cu${CUDA_VER}.html
 ```
 
 For example, for torch 1.12.1 + cuda 11.3:
 ```
-pip install kaolin==0.12.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-1.12.1_cu113.html
+pip install kaolin==0.13.0 -f https://nvidia-kaolin.s3.us-east-2.amazonaws.com/torch-1.12.1_cu113.html
 ```
 
 See the [Kaolin Installation Doc](https://kaolin.readthedocs.io/en/latest/notes/installation.html) for additional methods.
 
 _The minimum required version of Kaolin is `0.12.0`._  
 
-#### 4. Installing Wisp
+#### 5. Installing Wisp
 
 Install the rest of the dependencies from [requirements](requirements.txt).
 
